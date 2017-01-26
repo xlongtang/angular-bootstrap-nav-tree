@@ -41,8 +41,8 @@
             return;
           }
           if (scope.treeData.length == null) {
-            if (treeData.label != null) {
-              scope.treeData = [treeData];
+            if (scope.treeData.label != null) {
+              scope.treeData = [scope.treeData];
             } else {
               alert('treeData should be an array of root branches');
               return;
@@ -203,6 +203,9 @@
                   tree_icon = attrs.iconExpand;
                 }
               }
+                if (branch.overwriteIcon) {
+                    tree_icon = branch.overwriteIcon;
+                }
               scope.tree_rows.push({
                 level: level,
                 branch: branch,
